@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20378
+  m_Name: pb_Mesh20274
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -311,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150381388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -343,7 +343,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330790197}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -366,6 +366,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 330790200}
   speed: 12
+  gravity: -19.81
+  groundCheck: {fileID: 150381389}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!143 &330790200
 CharacterController:
   m_ObjectHideFlags: 0
@@ -383,7 +389,7 @@ CharacterController:
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &379870909
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,7 +4137,7 @@ GameObject:
   - component: {fileID: 436182873}
   - component: {fileID: 436182872}
   - component: {fileID: 436182871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4440,7 +4446,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20396
+  m_Name: pb_Mesh20292
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5021,7 +5027,7 @@ GameObject:
   - component: {fileID: 774520818}
   - component: {fileID: 774520817}
   - component: {fileID: 774520816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5745,7 +5751,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10754
+  m_Name: pb_Mesh20356
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6001,7 +6007,7 @@ GameObject:
   - component: {fileID: 1139027147}
   - component: {fileID: 1139027146}
   - component: {fileID: 1139027145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6310,7 +6316,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20476
+  m_Name: pb_Mesh20388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6508,7 +6514,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20502
+  m_Name: pb_Mesh20414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6680,7 +6686,7 @@ GameObject:
   - component: {fileID: 1438762993}
   - component: {fileID: 1438762992}
   - component: {fileID: 1438762991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9782,7 +9788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1473229988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9823,7 +9829,7 @@ GameObject:
   - component: {fileID: 1475767605}
   - component: {fileID: 1475767604}
   - component: {fileID: 1475767603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10132,7 +10138,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20418
+  m_Name: pb_Mesh20314
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14030,7 +14036,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20352
+  m_Name: pb_Mesh20248
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14291,7 +14297,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20462
+  m_Name: pb_Mesh20374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14462,7 +14468,7 @@ GameObject:
   - component: {fileID: 1764599540}
   - component: {fileID: 1764599539}
   - component: {fileID: 1764599538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14902,7 +14908,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20438
+  m_Name: pb_Mesh20336
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15066,7 +15072,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20364
+  m_Name: pb_Mesh20260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
