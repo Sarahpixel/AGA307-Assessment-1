@@ -9,6 +9,8 @@ public class EnemyManager : MonoBehaviour
     public List<GameObject> enemies; //a list containing our enemies
     public string[] enemyNames;
     public string playerName = "Sarah";
+    public int spawnCount=10;
+
 
     void Start()
     {
@@ -17,6 +19,11 @@ public class EnemyManager : MonoBehaviour
         enemies.Add(enemyTypes[2]);
         enemies.Add(enemyTypes[3]);
        
+        for (int i = 0; i < spawnCount; i++)
+        {
+            SpawnEnemy();
+        }
+        
     }
     private void Update()
     {
@@ -27,21 +34,56 @@ public class EnemyManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            KillEnemy();
+            KillAllEnemies();
         }
     }
     void SpawnEnemy()
     {
+        //spawns a random enemy at a random spawn point
         int enemyNumber = Random.Range(0, enemyTypes.Length);
         int spawnPoint = Random.Range(0, spawnPoints.Length);
         GameObject enemy=Instantiate(enemyTypes[enemyNumber], spawnPoints[spawnPoint].position, spawnPoints[spawnPoint].rotation,transform);
         enemies.Add(enemy);
         print(enemies.Count);
+        
+        for(int i =0; i < enemyTypes.Length; i++)
+        {
+            print(i+1);
+        }
+    }
+    void spawnEnemies()
+    {
+        //this will spawn an enemy at each spawn point
+     
+        for (int i =0; i <spawnPoints.Length; i++)
+        {
+            GameObject enemy = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Length)], spawnPoints[i].position, spawnPoints[i].rotation, transform);
+            enemies.Add(enemy);
+        }
     }
 
-    void KillEnemy()
+    void KillEnemy(GameObject _enemy)
     {
-        Destroy(enemies[0]);
+        if(enemies.Count == 0)
+            return;
+        Destroy(_enemy);
+        enemies.Remove(_enemy);
+        ////Destroy(enemies[0]);
+        //Destroy(enemies[enemies.Count]);
+        ////enemies.RemoveAt(0);
+        //enemies.RemoveAt(enemies.Count-1);
+
         print(enemies.Count);
+    }
+
+    void KillAllEnemies()
+    {
+        if (enemies.Count == 0)
+            return ;
+        for(int i =0;i < enemies.Count; i++)
+        {
+            Destroy(enemies[i]);
+            enemies.Remove(enemies[i]);
+        }
     }
 }
