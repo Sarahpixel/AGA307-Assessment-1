@@ -10,14 +10,15 @@ public class EnemyManager : MonoBehaviour
     public string[] enemyNames;
     public string playerName = "Sarah";
     public int spawnCount=10;
+    public string killCondition = "Two";
 
 
     void Start()
     {
-        enemies.Add(enemyTypes[0]);
-        enemies.Add(enemyTypes[1]);
-        enemies.Add(enemyTypes[2]);
-        enemies.Add(enemyTypes[3]);
+        //enemies.Add(enemyTypes[0]);
+        //enemies.Add(enemyTypes[1]);
+        //enemies.Add(enemyTypes[2]);
+        //enemies.Add(enemyTypes[3]);
        
         for (int i = 0; i < spawnCount; i++)
         {
@@ -36,6 +37,10 @@ public class EnemyManager : MonoBehaviour
         {
             KillAllEnemies();
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            KillSpecificEnemy(killCondition);
+        }
     }
     void SpawnEnemy()
     {
@@ -46,10 +51,10 @@ public class EnemyManager : MonoBehaviour
         enemies.Add(enemy);
         print(enemies.Count);
         
-        for(int i =0; i < enemyTypes.Length; i++)
-        {
-            print(i+1);
-        }
+        //for(int i =0; i < enemyTypes.Length; i++)
+        //{
+        //    print(i+1);
+        //}
     }
     void spawnEnemies()
     {
@@ -61,7 +66,10 @@ public class EnemyManager : MonoBehaviour
             enemies.Add(enemy);
         }
     }
-
+    /// <summary>
+    /// kills a specific enemy in our game
+    /// </summary>
+    /// <param name="_enemy">the enemy we wish to kill</param>
     void KillEnemy(GameObject _enemy)
     {
         if(enemies.Count == 0)
@@ -76,14 +84,25 @@ public class EnemyManager : MonoBehaviour
         print(enemies.Count);
     }
 
+    void KillSpecificEnemy(string _condition)
+    {
+        for (int i = 0; i <enemies.Count; i++)
+        {
+            if (enemies[i].name.Contains(_condition)) //any that contains we kill the enemies
+                KillEnemy(enemies[i]);
+        }
+    }
+
     void KillAllEnemies()
     {
         if (enemies.Count == 0)
             return ;
+
         for(int i =0;i < enemies.Count; i++)
         {
             Destroy(enemies[i]);
-            enemies.Remove(enemies[i]);
+           
         }
+        enemies.Clear();
     }
 }
