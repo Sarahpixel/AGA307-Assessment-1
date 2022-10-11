@@ -49,7 +49,7 @@ public class FiringPoint : MonoBehaviour
             laser.SetPosition(0, transform.position);
             laser.SetPosition(1,hit.point);
             GameObject party = Instantiate(hitSparks, hit.point, hit.transform.rotation);
-            Destroy(party,2);
+            Destroy(party,5);
         }
     }
 }

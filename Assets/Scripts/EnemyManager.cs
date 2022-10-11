@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     public List<GameObject> enemies; //a list containing our enemies
     public string[] enemyNames;
     public string playerName = "Sarah";
-    public int spawnCount=10;
+    public int spawnCount=2;
     public string killCondition = "Two";
 
 

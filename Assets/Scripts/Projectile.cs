@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,17 @@ public class Projectile : MonoBehaviour
             //destroys the gameobject after 1 sec
             Destroy(collision.collider.gameObject, 1f);
             //destroy this gameobject
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);  
         } 
 
+        //check if the player hits the target
+        if(collision.gameObject.GetComponent<Target>() != null)
+        {
+            Target target = collision.gameObject.GetComponent<Target>(); 
+            
+            target.TakeDamage(damage);
+            Destroy(target.gameObject);
+        }
     }
 
    
