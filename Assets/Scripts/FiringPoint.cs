@@ -48,8 +48,18 @@ public class FiringPoint : MonoBehaviour
             Debug.Log("We hit"+hit.collider.name+ "at point " + hit.point+ "which was" + hit.distance+ "units away");
             laser.SetPosition(0, transform.position);
             laser.SetPosition(1,hit.point);
+            StopAllCoroutines();
+            StartCoroutine(StopLaser());
             GameObject party = Instantiate(hitSparks, hit.point, hit.transform.rotation);
             Destroy(party,5);
         }
     }
+
+    IEnumerator StopLaser()
+    {
+        laser.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        laser.gameObject.SetActive(false);
+    }
+
 }
