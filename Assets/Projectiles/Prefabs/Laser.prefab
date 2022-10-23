@@ -88,8 +88,18 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Positions:
+<<<<<<< Updated upstream
   - {x: -0.10489078, y: 1.2199998, z: 0.89386684}
   - {x: -2.8162785, y: 1.2199998, z: 24}
+=======
+<<<<<<< HEAD
+  - {x: 0.89387107, y: 1.2199998, z: -0.10485566}
+  - {x: 12.712874, y: 1.2199998, z: -1.4912859}
+=======
+  - {x: -0.10489078, y: 1.2199998, z: 0.89386684}
+  - {x: -2.8162785, y: 1.2199998, z: 24}
+>>>>>>> 79954bd621f168cd370c18085c1452a2608ba387
+>>>>>>> Stashed changes
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1.25
