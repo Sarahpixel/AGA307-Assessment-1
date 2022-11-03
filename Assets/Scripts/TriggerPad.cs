@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class TriggerPad : MonoBehaviour
 {
-    [SerializeField] private Renderer myObject;
+    public GameObject sphere;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-           myObject.material.color = Color.green;
+            sphere.GetComponent<Renderer>().material.color = Color.green;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            sphere.transform.localScale = Vector3.one * 0.01f;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            myObject.material.color = Color.blue;
+            sphere.transform.localScale = Vector3.one;
+            sphere.GetComponent<Renderer>().material.color = Color.blue;
         }
+
+
     }
 }
 
