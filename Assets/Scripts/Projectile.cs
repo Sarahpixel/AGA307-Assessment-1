@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
         {
             Target target = collision.gameObject.GetComponent<Target>(); 
             
-            target.TakeDamage(damage);
+            //target.TakeDamage(damage);
             Destroy(target.gameObject);
         }
     }

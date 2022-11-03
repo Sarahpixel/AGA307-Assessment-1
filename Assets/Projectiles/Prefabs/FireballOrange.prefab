@@ -38920,6 +38920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4772430082465235504}
   - component: {fileID: 4825257544039014424}
+  - component: {fileID: -2709953630702068411}
   - component: {fileID: 4887939010068699700}
   m_Layer: 0
   m_Name: FireballOrange
@@ -38970,6 +38971,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2709953630702068411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771011118064378264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb7ce6d30df5bb44a71b9cd2283acb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!135 &4887939010068699700
 SphereCollider:
   m_ObjectHideFlags: 0
