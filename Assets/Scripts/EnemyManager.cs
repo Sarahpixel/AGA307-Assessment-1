@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum EnemyType
 {
-    Target,
-    NormalTarget,
-    BigTarget
+    Small,
+    Medium,
+    Large
 }
 public class EnemyManager : MonoBehaviour
 {

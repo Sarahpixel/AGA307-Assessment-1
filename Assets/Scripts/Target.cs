@@ -18,15 +18,15 @@ public class Target : MonoBehaviour
     {
         switch (myType)
         {
-            case EnemyType.Target:
+            case EnemyType.Small:
                 health = 200;
                 break;
 
-            case EnemyType.NormalTarget:
+            case EnemyType. Medium:
                 health = 100;
                 break;
                  
-            case EnemyType.BigTarget:
+            case EnemyType.Large:
                 health = 50;
                 break;
 
