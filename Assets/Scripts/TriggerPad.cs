@@ -27,7 +27,7 @@ public class TriggerPad : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             sphere.transform.localScale = Vector3.one;
-            sphere.GetComponent<Renderer>().material.color = Color.blue;
+            sphere.GetComponent<Renderer>().material.color = Color.red;
         }
 
 
