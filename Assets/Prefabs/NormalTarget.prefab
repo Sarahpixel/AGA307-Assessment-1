@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8162780214551408332}
   - component: {fileID: 8162780214551408335}
   - component: {fileID: 5556862500277307506}
-  - component: {fileID: 7960219024424930706}
+  - component: {fileID: 4568926162572747}
   m_Layer: 0
-  m_Name: Target
+  m_Name: NormalTarget
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8162780214551408369}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.02, z: 1}
+  m_LocalScale: {x: 1.9874291, y: 0.039748583, z: 1.9874291}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!65 &7960219024424930706
+--- !u!65 &4568926162572747
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

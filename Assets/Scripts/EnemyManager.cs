@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyType
+{
+    Target,
+    NormalTarget,
+    BigTarget
+}
 public class EnemyManager : MonoBehaviour
 {
     public Transform[] spawnPoints; // spawn point for our enemies
@@ -15,6 +21,8 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
+        
+
         //enemies.Add(enemyTypes[0]);
         //enemies.Add(enemyTypes[1]);
         //enemies.Add(enemyTypes[2]);
@@ -40,6 +48,18 @@ public class EnemyManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             KillSpecificEnemy(killCondition);
+        }
+    }
+
+    float spawnDelay = 3;
+    IEnumerator SpawnEnemyDelayed()
+    {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            int rndEnemy = Random.Range(0, enemyTypes.Length);
+            GameObject enemy = Instantiate(enemyTypes[rndEnemy], spawnPoints[i].position, spawnPoints[i].rotation);
+            enemies.Add(enemy);
+            yield return new WaitForSeconds(spawnDelay);    
         }
     }
     void SpawnEnemy()
