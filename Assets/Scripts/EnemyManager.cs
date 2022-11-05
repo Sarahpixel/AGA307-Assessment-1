@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public enum EnemyType
@@ -8,7 +9,7 @@ public enum EnemyType
     Medium,
     Large
 }
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     public Transform[] spawnPoints; // spawn point for our enemies
     public GameObject[] enemyTypes; //contains our different enemy types
@@ -90,7 +91,7 @@ public class EnemyManager : MonoBehaviour
     /// kills a specific enemy in our game
     /// </summary>
     /// <param name="_enemy">the enemy we wish to kill</param>
-    void KillEnemy(GameObject _enemy)
+    public void KillEnemy(GameObject _enemy)
     {
         if(enemies.Count == 0)
             return;
@@ -101,6 +102,13 @@ public class EnemyManager : MonoBehaviour
         ////enemies.RemoveAt(0);
         //enemies.RemoveAt(enemies.Count-1);
 
+        print(enemies.Count);
+
+    }
+
+    public void EnemyDied(Target _target)
+    {
+        enemies.Remove(_target.gameObject);
         print(enemies.Count);
     }
 

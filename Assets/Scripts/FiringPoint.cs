@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FiringPoint : MonoBehaviour
 {
+    [Header("References")]
     public GameObject projectilePrefab;
     public GameObject hitSparks;
     public LineRenderer laser;
     public float projectileSpeed = 1000;
     public Transform firingPoint;
-
+    public Camera cam;
     // Update is called once per frame
     void Update()
     {
@@ -35,7 +36,7 @@ public class FiringPoint : MonoBehaviour
             //Get the rigidbody component of the projectile and add force to 'fire' it
             projectileInstance.GetComponent<Rigidbody>().AddForce(firingPoint.forward * projectileSpeed);
             //Destroy our projectile after 5 sec
-            Destroy(projectileInstance, 5);
+            Destroy(projectileInstance, 1.5f);
 
     }
     void FireRaycast()
@@ -51,7 +52,11 @@ public class FiringPoint : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(StopLaser());
             GameObject party = Instantiate(hitSparks, hit.point, hit.transform.rotation);
-            Destroy(party,5);
+            Destroy(party,2);
+            if (hit.collider.CompareTag("Target"))
+            {
+                Destroy(hit.collider.gameObject);
+            }
         }
     }
 

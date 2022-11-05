@@ -15,6 +15,13 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    GameManager _GM;
+
+    private void Start()
+    {
+        _GM = FindObjectOfType<GameManager>();
+        GameManager.instance.health = 500;
+    }
 
     void Update()
     {
