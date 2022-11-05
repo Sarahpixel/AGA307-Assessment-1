@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
     
 
     public float health;
+    //UIManager _UI;
     public GameState gameState;
     public Difficulty difficulty;
     public int score;
@@ -30,27 +31,26 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-
         if (gameState == GameState.Playing)
         {
             timer += Time.deltaTime;
             timer = Mathf.Clamp(timer, 0, maxTime);
             //_UI.UpdateTimer(timer);
-           
+
         }
+    }
+    public void AddScore(int _score)
+    {
+        score += _score * scoreMultiplyer;
+        //_UI.UpdateScore(score);
+
 
     }
     public void ChangeGameState(GameState _gameState)
     {
         gameState = _gameState;
     }
-    public void AddScore(int _score)
-    {
-        score += _score * scoreMultiplyer;
-        _UI.UpdateScore(score);
-
-
-    }
+   
     public void LoadGame()
     {
         SceneManager.LoadScene("MainGame");

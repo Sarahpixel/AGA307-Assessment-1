@@ -27,10 +27,10 @@ public class UIManager : Singleton<UIManager>
     {
         difficultyText.text = difficulty.ToString();
     }
-    public void UpdateTimer(float _timer)
+    public void UpdateTimer(float _time)
     {
-        timerText.text = "Time Remaining:" + _timer.ToString("F2");
-        if (_timer > 0)
+        timerText.text = "Time Remaining:" + _time.ToString("##:##");
+        if (_time > 0)
             timerText.color = Color.red;
         else
             timerText.color = Color.white;
