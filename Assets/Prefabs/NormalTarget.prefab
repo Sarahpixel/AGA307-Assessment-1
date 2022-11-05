@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myType: 1
+  mySpeed: 5
+  myHealth: 100
   health: 100
 --- !u!65 &4568926162572747
 BoxCollider:

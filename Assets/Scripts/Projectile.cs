@@ -28,9 +28,9 @@ public class Projectile : MonoBehaviour
         //check if the player hits the target
         if(collision.gameObject.GetComponent<Target>() != null)
         {
-            Target target = collision.gameObject.GetComponent<Target>(); 
-            
-            //target.TakeDamage(damage);
+            Target target = collision.gameObject.GetComponent<Target>();
+
+            target.TakeDamage(damage);
             Destroy(target.gameObject);
         }
     }

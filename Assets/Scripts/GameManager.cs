@@ -18,7 +18,8 @@ public class GameManager : Singleton<GameManager>
     public Difficulty difficulty;
     public int score;
     int scoreMultiplyer = 1;
-    float timer;
+    public float maxTime = 30;
+    float timer = 30;
 
     private void Start()
     {
@@ -26,13 +27,6 @@ public class GameManager : Singleton<GameManager>
         Setup();
         OnDifficultyChanged?.Invoke(difficulty);
     }
-    //private void Awake() // singleton pattern that can be accessed by all the other scripts 
-    //{
-    //    if (instance == null) // if the game manager doesn't exist create the script
-    //        instance = this;
-    //    else
-    //        Destroy(this); // we're only allowed to have one copy of the gamemanager
-    //}
 
     private void Update()
     {
@@ -40,13 +34,22 @@ public class GameManager : Singleton<GameManager>
         if (gameState == GameState.Playing)
         {
             timer += Time.deltaTime;
+            timer = Mathf.Clamp(timer, 0, maxTime);
+            //_UI.UpdateTimer(timer);
            
         }
 
     }
+    public void ChangeGameState(GameState _gameState)
+    {
+        gameState = _gameState;
+    }
     public void AddScore(int _score)
     {
         score += _score * scoreMultiplyer;
+        _UI.UpdateScore(score);
+
+
     }
     public void LoadGame()
     {

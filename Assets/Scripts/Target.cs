@@ -60,6 +60,7 @@ public class Target : GameBehaviour
     {
         _GM.AddScore(100);
         _EM.KillEnemy(gameObject);
+        _UI.
         StopAllCoroutines();
         Destroy(gameObject);
     }
@@ -77,11 +78,11 @@ public class Target : GameBehaviour
 
         StartCoroutine(Move());
     }
-     void TakeDamage(int _damage)
+    public void TakeDamage(int _damage)
     {
-        health = _damage;
+        health -= _damage;
 
-        if(health > 0)
+        if(health <= 0)
         {
              Destroy(gameObject);
         }

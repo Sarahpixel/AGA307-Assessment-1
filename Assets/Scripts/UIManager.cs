@@ -27,8 +27,12 @@ public class UIManager : Singleton<UIManager>
     {
         difficultyText.text = difficulty.ToString();
     }
-    public void UpdateTimer(float _time)
+    public void UpdateTimer(float _timer)
     {
-        timerText.text = _time.ToString("##:##");
+        timerText.text = "Time Remaining:" + _timer.ToString("F2");
+        if (_timer > 0)
+            timerText.color = Color.red;
+        else
+            timerText.color = Color.white;
     }
 }

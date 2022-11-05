@@ -36,7 +36,7 @@ public class FiringPoint : MonoBehaviour
             //Get the rigidbody component of the projectile and add force to 'fire' it
             projectileInstance.GetComponent<Rigidbody>().AddForce(firingPoint.forward * projectileSpeed);
             //Destroy our projectile after 5 sec
-            Destroy(projectileInstance, 1.5f);
+            Destroy(projectileInstance, 2);
 
     }
     void FireRaycast()
