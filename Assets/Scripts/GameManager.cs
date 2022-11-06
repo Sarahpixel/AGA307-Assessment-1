@@ -11,22 +11,39 @@ public enum Difficulty { Easy, Medium, Hard, }
 public class GameManager : Singleton<GameManager>
 {
     public static event Action <Difficulty> OnDifficultyChanged = null; // event
-    
+    public static class GameEvents
+    {
+        public static event Action <Target> OnEnemyHit = null;
+        public static event Action <Target> OnEnemyDied = null;
+
+        public static void ReportEnemtHit(Target _target)
+        {
+            Debug.Log("Target" + _target.name + "was hit");
+            OnEnemyHit?.Invoke(_target);
+        }
+        public static void ReportEnemyDied(Target _target)
+        {
+            Debug.Log("Target" + _target.name + "died");
+            OnEnemyDied?.Invoke(_target);
+        }
+    }
 
     public float health;
-    //UIManager _UI;
+    //Reference
     public GameState gameState;
     public Difficulty difficulty;
     public int score;
     int scoreMultiplyer = 1;
     public float maxTime = 30;
     float timer = 30;
+    private UIManager _UI;
 
     private void Start()
     {
         timer = 0;
         Setup();
         OnDifficultyChanged?.Invoke(difficulty);
+        _UI = FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -35,14 +52,14 @@ public class GameManager : Singleton<GameManager>
         {
             timer += Time.deltaTime;
             timer = Mathf.Clamp(timer, 0, maxTime);
-            //_UI.UpdateTimer(timer);
+            _UI.UpdateTimer(timer);
 
         }
     }
     public void AddScore(int _score)
     {
         score += _score * scoreMultiplyer;
-        //_UI.UpdateScore(score);
+        _UI.UpdateScore(score);
 
 
     }
@@ -50,10 +67,11 @@ public class GameManager : Singleton<GameManager>
     {
         gameState = _gameState;
     }
-   
-    public void LoadGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("MainGame");
+        //_GM.ChangeGameState(GameState.InGame);
+
     }
     public void LoidTitle()
     {
@@ -108,4 +126,6 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
     }
+    
+    
 }

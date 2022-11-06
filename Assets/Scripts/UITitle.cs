@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UITitle : MonoBehaviour
 {
-   public void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("MainGame");
         //_GM.ChangeGameState(GameState.InGame);

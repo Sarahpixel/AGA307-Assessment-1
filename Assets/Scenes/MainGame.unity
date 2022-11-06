@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d4c41b1820fbd40bc8162777f0de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: 1
   health: 100
   gameState: 1
   difficulty: 0
@@ -5355,6 +5356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cca136118558841a7149f9a008e2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: 0
   scoreText: {fileID: 1351186995}
   difficultyText: {fileID: 1081827878}
   enemyCountText: {fileID: 1020367499}
@@ -6047,7 +6049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time Remaining:'
+  m_text: 'Time Remaining :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6074,10 +6076,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 49.15
   m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6110,7 +6112,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -4.9643097, z: -111.695915, w: 0}
+  m_margin: {x: 0, y: -4.9643097, z: -693.7091, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11387,6 +11389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6794e0ec5dc7614597e411eac04a9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: 0
   spawnPoints:
   - {fileID: 9151609607519081458}
   - {fileID: 1650011785}

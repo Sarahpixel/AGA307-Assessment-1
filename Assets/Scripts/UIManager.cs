@@ -29,7 +29,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void UpdateTimer(float _time)
     {
-        timerText.text = "Time Remaining:" + _time.ToString("##:##");
+        timerText.text = "Time Remaining :" + _time.ToString("F2");
         if (_time > 0)
             timerText.color = Color.red;
         else
