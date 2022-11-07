@@ -36,14 +36,15 @@ public class GameManager : Singleton<GameManager>
     int scoreMultiplyer = 1;
     public float maxTime = 30;
     float timer = 30;
-    private UIManager _UI;
+    public UIManager _UI;
+    //_UI = FindObjectOfType<UIManager>();
 
     private void Start()
     {
         timer = 0;
         Setup();
         OnDifficultyChanged?.Invoke(difficulty);
-        _UI = FindObjectOfType<UIManager>();
+        
     }
 
     private void Update()
